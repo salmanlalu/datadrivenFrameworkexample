@@ -1,0 +1,21 @@
+19-09-28 23:56:13:227  INFO main base.testBase:65 - config file loaded
+19-09-28 23:56:13:238  INFO main base.testBase:79 - Object repository file loaded
+19-09-28 23:56:22:125  INFO main base.testBase:150 - clilcking on: bmLoginBtn_XPATH
+19-09-28 23:56:22:125  INFO main base.testBase:17 - loginTest Started
+19-09-28 23:56:24:195  INFO main base.testBase:21 - loginTest is passed like a charm :)
+19-09-28 23:56:26:133  INFO main base.testBase:65 - config file loaded
+19-09-28 23:56:26:134  INFO main base.testBase:79 - Object repository file loaded
+19-09-28 23:56:33:215  INFO main base.testBase:150 - clilcking on: bmLoginBtn_XPATH
+19-09-28 23:56:36:215  INFO main base.testBase:19 - addCustomerTest is started
+19-09-28 23:56:36:392  INFO main base.testBase:150 - clilcking on: addcustomerbtn_CSS
+19-09-28 23:56:39:734  INFO main base.testBase:169 - Typing in: customerfirstName_XPATH entering the value of: Salman
+19-09-28 23:56:40:258  INFO main base.testBase:169 - Typing in: customerlastName_XPATH entering the value of: Sattar
+19-09-28 23:56:40:813  INFO main base.testBase:169 - Typing in: customerPostCode_XPATH entering the value of: 444554K
+19-09-28 23:56:40:996  INFO main base.testBase:150 - clilcking on: addcustomerbtnsmall_XPATH
+19-09-28 23:56:46:082  INFO main base.testBase:41 - addCustomerTest is passed like a charm
+19-09-28 23:56:46:587  INFO main base.testBase:150 - clilcking on: openaccount_XPATH
+19-09-28 23:56:49:589  INFO main base.testBase:52 - openAccountTest is started
+19-09-28 23:56:49:802  INFO main base.testBase:189 - Selecting in: userselect_XPATH entering value of: Salman Sattar
+19-09-28 23:56:50:034  INFO main base.testBase:189 - Selecting in: currencyselect_XPATH entering value of: Dollar
+19-09-28 23:56:50:224  INFO main base.testBase:150 - clilcking on: processbtn_XPATH
+19-09-28 23:56:55:242  INFO main base.testBase:66 - openAccountTest is passed like a charm
