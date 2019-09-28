@@ -49,7 +49,7 @@ public class testBase {
 	public static Logger log = Logger.getLogger(testBase.class.getName());
 	
 	
-
+	//this is for testing the jenkins with github
 	@BeforeTest
 	public void setUp() throws IOException {
 		
