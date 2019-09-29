@@ -30,11 +30,6 @@ import utilities.excelutil;
 
 public class testBase {
 
-	/*
-	 * WebDriver excel Database properties logs extent report Mail ReportNG Extent
-	 * Report Jenkins
-	 */
-
 	public static WebDriver driver;
 	public static Properties config = new Properties();
 	public static Properties OR = new Properties();
@@ -47,12 +42,10 @@ public class testBase {
 	public static ExtentTest test;
 	public static String browser;
 	public static Logger log = Logger.getLogger(testBase.class.getName());
-	
-	
-	//this is for testing the jenkins with github
+
 	@BeforeTest
 	public void setUp() throws IOException {
-		
+
 		BasicConfigurator.configure();
 		try {
 			fis = new FileInputStream(
@@ -81,16 +74,14 @@ public class testBase {
 			e.printStackTrace();
 			log.debug("unable to load OR file");
 		}
-		
-		
-		if(System.getenv("browser")!=null && !System.getenv("browser").isEmpty()) {
-			
+
+		if (System.getenv("browser") != null && !System.getenv("browser").isEmpty()) {
+
 			browser = System.getenv("browser");
-		}
-		else {
+		} else {
 			browser = config.getProperty("browser");
 		}
-		
+
 		config.setProperty("browser", browser);
 
 		if (config.getProperty("browser").equals("chrome")) {
@@ -129,64 +120,58 @@ public class testBase {
 		}
 
 	}
-	
+
 	public static void click(String locator) {
-		
+
 		if (locator.endsWith("_XPATH")) {
-		
+
 			driver.findElement(By.xpath(OR.getProperty(locator))).click();
-			
-		} 
-		else if (locator.endsWith("_CSS")) {
-		
+
+		} else if (locator.endsWith("_CSS")) {
+
 			driver.findElement(By.cssSelector(OR.getProperty(locator))).click();
-		}
-		else if (locator.endsWith("_ID")) {
-			
+		} else if (locator.endsWith("_ID")) {
+
 			driver.findElement(By.id(OR.getProperty(locator))).click();
 		}
-		
-		test.log(LogStatus.INFO, "clicking on: "+locator);
-		log.info("clilcking on: "+locator);
+
+		test.log(LogStatus.INFO, "clicking on: " + locator);
+		log.info("clilcking on: " + locator);
 	}
-	
+
 	public static void type(String locator, String value) {
-		
+
 		if (locator.endsWith("_XPATH")) {
-		
+
 			driver.findElement(By.xpath(OR.getProperty(locator))).sendKeys(value);
-		} 
-		else if (locator.endsWith("_CSS")) {
-		
+		} else if (locator.endsWith("_CSS")) {
+
 			driver.findElement(By.cssSelector(OR.getProperty(locator))).sendKeys(value);
-		}
-		else if (locator.endsWith("_ID")) {
-			
+		} else if (locator.endsWith("_ID")) {
+
 			driver.findElement(By.id(OR.getProperty(locator))).sendKeys(value);
 		}
-		
-		test.log(LogStatus.INFO, "Typing in: "+locator+" entering value of: "+value);
-		log.info("Typing in: "+locator+" entering the value of: "+value);
+
+		test.log(LogStatus.INFO, "Typing in: " + locator + " entering value of: " + value);
+		log.info("Typing in: " + locator + " entering the value of: " + value);
 	}
 
 	static WebElement dropdown;
 
 	public static void select(String locator, String value) {
 
-		if(locator.endsWith("_XPATH")) {
+		if (locator.endsWith("_XPATH")) {
 			dropdown = driver.findElement(By.xpath(OR.getProperty(locator)));
-		}
-		else if (locator.endsWith("_CSS")) {
+		} else if (locator.endsWith("_CSS")) {
 			dropdown = driver.findElement(By.cssSelector(OR.getProperty(locator)));
-		}
-		else if (locator.endsWith("_ID")) {
+		} else if (locator.endsWith("_ID")) {
 			dropdown = driver.findElement(By.id(OR.getProperty(locator)));
 		}
 		Select select = new Select(dropdown);
 		select.selectByVisibleText(value);
-		
-		test.log(LogStatus.INFO, "Selecting in: "+locator+" entering value of: "+value);
-		log.info("Selecting in: "+locator+" entering value of: "+value);
+
+		test.log(LogStatus.INFO, "Selecting in: " + locator + " entering value of: " + value);
+		log.info("Selecting in: " + locator + " entering value of: " + value);
 	}
 
 	@AfterTest

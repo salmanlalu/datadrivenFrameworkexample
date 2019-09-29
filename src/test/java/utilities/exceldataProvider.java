@@ -7,23 +7,6 @@ import base.testBase;
 
 public class exceldataProvider extends testBase {
 
-
-//	@DataProvider(name = "addCustomerData")
-//	public Object[][] getData() {
-//
-//		Object data[][] = testdata1("addCustomerTest");
-//		return data;
-//
-//	}
-//
-//	@DataProvider(name = "openAccountData")
-//	public Object[][] getData1() {
-//
-//		Object data[][] = testdata1("openAccountTest");
-//		return data;
-//
-//	}
-	
 	@DataProvider(name = "dp")
 	public Object[][] getData(Method m) {
 

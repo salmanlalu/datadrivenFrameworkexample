@@ -12,7 +12,7 @@ public class excelutil {
 
 		try {
 			workbook = new XSSFWorkbook(excelPath);
-			// sheet = workbook.getSheet(sheetName);
+
 			sheet = workbook.getSheetAt(0);
 
 		} catch (Exception e) {
@@ -29,7 +29,7 @@ public class excelutil {
 		try {
 			sheet = workbook.getSheetAt(index);
 			rowCount = sheet.getPhysicalNumberOfRows();
-			// System.out.println("No. of rows: "+rowCount);
+
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			System.out.println(e.getCause());
@@ -45,7 +45,7 @@ public class excelutil {
 		try {
 			sheet = workbook.getSheetAt(index);
 			colCount = sheet.getRow(0).getPhysicalNumberOfCells();
-			// System.out.println("No. of rows: "+rowCount);
+
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			System.out.println(e.getCause());
@@ -61,20 +61,13 @@ public class excelutil {
 		try {
 			sheet = workbook.getSheetAt(index);
 			cellData = sheet.getRow(rowNum).getCell(colNum).getStringCellValue();
-			// System.out.println(cellData);
+
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			System.out.println(e.getCause());
 			e.printStackTrace();
 		}
 		return cellData;
-
-	}
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		// getRowCount();
-		// getCelldata(0,0);
 
 	}
 
